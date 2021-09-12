@@ -1,0 +1,116 @@
+html, body {
+    background: url("../../img/bg.png") #2b2b2b no-repeat center fixed;
+    background-size: 100% auto;
+}
+.fixed-logo {
+    position: fixed;
+    height: 100px;
+    width: 306px;
+}
+
+header .header-bg {
+    background: url("../../img/bg-menu.png") no-repeat right;
+    background-size: 100% auto;
+}
+header .dropdown-menu {
+    border-radius: unset;
+}
+header .dropdown-item:hover {
+    background: #3c3f41;
+    color: #ffffff;
+}
+header .dropdown-item:active {
+    background: #f09509;
+}
+
+main {
+    margin-top: 20px;
+}
+main section {
+    background: url("../../img/bg-section.png");
+}
+main section header {
+    background: url("../../img/bg-section-header.png") no-repeat right;
+    margin-right: -15px;
+    padding: 5px 20px 5px 20px;
+}
+main section header h1 {
+    color: #f2f2f2;
+    font-size: 180%;
+}
+
+main section article {
+    color: #f2f2f2;
+    font-size: 120%;
+    padding: 20px;
+}
+
+main aside section {
+    margin-bottom: 20px;
+}
+main aside ul {
+    padding: 0px;
+    list-style: none;
+}
+main aside ul li a {
+    color: #ffa820;
+    font-size: 100%;
+}
+main aside ul li a:hover {
+    color: #b17c2a;
+}
+main aside .body-module {
+    padding: 20px;
+}
+
+.mt-13px {
+    margin-top: 13px;
+}
+.navbar-light .navbar-nav .nav-link {
+    font-weight: bold;
+}
+
+
+footer {
+    margin-top: 50px;
+    color: #f2f2f2;
+}
+footer .copyright {
+    padding: 20px;
+}
+
+/* Mobile */
+@media(max-width:567px){
+    header .header-bg {
+        background: url("../../img/bg-menu.png") no-repeat top right;
+        background-size: auto;
+    }
+    .navbar-collapse {
+        top: 70px;
+        z-index: 100;
+        position: absolute;
+        background: #f2f2f2;
+        padding: 20px;
+        margin-left: -100px;
+    }
+    .fixed-logo {
+        height: 50px !important;
+    }
+}
+@media(max-width:960px){
+    header .header-bg {
+        background: url("../../img/bg-menu.png") no-repeat top right;
+        background-size: auto;
+    }
+    .navbar-collapse {
+        top: 70px;
+        z-index: 100;
+        position: absolute;
+        background: #f2f2f2;
+        padding: 20px;
+        margin-left: -100px;
+    }
+    .fixed-logo {
+        height: 50px !important;
+    }
+}
