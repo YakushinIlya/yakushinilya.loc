@@ -26,29 +26,7 @@
                         </button>
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
-                                <li class="nav-item">
-                                    <a class="nav-link" aria-current="page" href="https://vk.com/yakushinilya">Автор в ВК</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Статьи</a>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#"id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">Деятельность</a>
-                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <li><a class="dropdown-item" href="#">Дизайн</a></li>
-                                        <li><a class="dropdown-item" href="#">Верстка</a></li>
-                                        <li><a class="dropdown-item" href="#">Программирование</a></li>
-                                        <li><a class="dropdown-item" href="#">Реклама</a></li>
-                                        <!--<li><hr class="dropdown-divider"></li>
-                                        <li><a class="dropdown-item" href="#">Something else here</a></li>-->
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Тарифы</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Контакты</a>
-                                </li>
+                                @include('basic._navigation-top')
                             </ul>
                         </div>
                     </div>
@@ -101,45 +79,7 @@
             </div>
             <div class="col-md-4">
                 <aside>
-                    <section>
-                        <header>
-                            <h1>Услуги</h1>
-                        </header>
-                        <div class="body-module">
-                            <ul>
-                                <li>
-                                    <a href="#">Дизайн сайтов/визиток</a>
-                                </li>
-                                <li>
-                                    <a href="#">Верстка сайтов/email писем</a>
-                                </li>
-                                <li>
-                                    <a href="#">Программирование сайтов</a>
-                                </li>
-                                <li>
-                                    <a href="#">Реклама сайтов/групп</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </section>
-                    <section>
-                        <header>
-                            <h1>Заголовок модуля</h1>
-                        </header>
-                        <div class="body-module">
-                            <ul>
-                                <li>
-                                    <a href="#">Заголовок ссылки модуля 1</a>
-                                </li>
-                                <li>
-                                    <a href="#">Заголовок ссылки модуля 2</a>
-                                </li>
-                                <li>
-                                    <a href="#">Заголовок ссылки модуля 3</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </section>
+                    @include('basic._navigation-sidebar')
                 </aside>
             </div>
         </div>

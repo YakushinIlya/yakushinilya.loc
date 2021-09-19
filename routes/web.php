@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('basic.app');
-});
+Route::get('/', 'HomeController@home')->name('home');
+Route::get('/vk', function () {
+    return redirect('https://vk.com/yakushinilya');
+})->name('vk');
+Route::get('/blog', 'Blog/PostController@getAll')->name('blog');
+Route::get('/business', 'Pages/BusinessController@getAll')->name('business');
+Route::get('/tariffs', 'Pages/PageController@getAll')->name('tariffs');
+Route::get('/contacts', 'Pages/PageController@getAll')->name('contacts');
