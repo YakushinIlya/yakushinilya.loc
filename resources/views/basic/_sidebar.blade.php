@@ -1,18 +1,13 @@
-@forelse($sidebarMenu as $item)
+@include('basic._navigation-sidebar')
+@forelse($widgets as $item)
     <section>
         <header>
             <h1>{{$item['head']}}</h1>
         </header>
         <div class="body-module">
-            <ul>
-                @foreach($item['list'] as $itemList)
-                    <li>
-                        <a href="{{$itemList['route']}}">{{$itemList['head']}}</a>
-                    </li>
-                @endforeach
-            </ul>
+            {!! $item['body'] !!}
         </div>
     </section>
 @empty
-    No sidebar
+    No widget
 @endforelse

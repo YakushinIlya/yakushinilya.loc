@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +21,11 @@ Route::get('/blog', 'Blog/PostController@getAll')->name('blog');
 Route::get('/business', 'Pages/BusinessController@getAll')->name('business');
 Route::get('/tariffs', 'Pages/PageController@getAll')->name('tariffs');
 Route::get('/contacts', 'Pages/PageController@getAll')->name('contacts');
+
+
+Route::group([
+    'prefix' => 'admin',
+    'namespace' => 'Admin'
+], function(){
+    Route::get('/', 'AdminController@getIndex')->name('admin');
+});

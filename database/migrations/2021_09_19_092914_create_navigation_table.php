@@ -15,6 +15,14 @@ class CreateNavigationTable extends Migration
     {
         Schema::create('navigation', function (Blueprint $table) {
             $table->id();
+            $table->string('head')->nullable();
+            $table->string('route')->nullable();
+            $table->string('class')->nullable();
+            $table->string('icon')->nullable();
+            $table->string('target')->nullable();
+            $table->string('location')->nullable();
+            $table->json('dropdown')->nullable();
+            $table->integer('range')->nullable();
             $table->timestamps();
         });
     }

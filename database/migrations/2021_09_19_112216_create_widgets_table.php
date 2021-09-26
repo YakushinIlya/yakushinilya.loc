@@ -15,6 +15,11 @@ class CreateWidgetsTable extends Migration
     {
         Schema::create('widgets', function (Blueprint $table) {
             $table->id();
+            $table->string('head_ru')->nullable();
+            $table->string('head_en')->nullable();
+            $table->text('body')->nullable();
+            $table->string('location')->nullable();
+            $table->integer('range')->nullable();
             $table->timestamps();
         });
     }
