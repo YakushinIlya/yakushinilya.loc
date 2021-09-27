@@ -47,6 +47,32 @@
 
 	    <div class="app-content pt-3 p-md-3 p-lg-4">
 		    <div class="container-xl">
+
+                @if (session('status'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                    </div>
+                @endif
+                @if (session('warning'))
+                    <div class="alert alert-warning" role="alert">
+                        {{ session('warning') }}
+                    </div>
+                @endif
+                @if (session('error'))
+                    <div class="alert alert-danger" role="alert">
+                        {!! session('error') !!}
+                    </div>
+                @endif
+                @if (count($errors) > 0)
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
 			    <h1 class="app-page-title">{{$title??config('app.name')}}</h1>
                 @yield('content')
 		    </div><!--//container-fluid-->

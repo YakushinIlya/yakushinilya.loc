@@ -23,6 +23,7 @@ class CreateNavigationTable extends Migration
             $table->string('target')->nullable();
             $table->string('location')->nullable();
             $table->json('dropdown')->nullable();
+            $table->integer('parent')->nullable();
             $table->integer('range')->nullable();
             $table->timestamps();
             $table->softDeletes();

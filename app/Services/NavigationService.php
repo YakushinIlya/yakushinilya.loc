@@ -59,7 +59,8 @@ class NavigationService implements NavigationInterface
     public static function delete(int $id, object $model)
     {
         try {
-            return $model::findOrFail($id)->delete();
+            $model::findOrFail($id)->delete();
+            return redirect()->back()->with('status', 'Элемент навигации успешно удален');
         } catch(ModelNotFoundException $e){
             return redirect()->back()->withErrors($e->getMessage());
         }

@@ -16,14 +16,14 @@ class NavigationController extends Controller
 
     public function index()
     {
-        $this->data['title']      = 'Навигация';
-        $this->data['navigation'] = NavigationService::getAll($this->model);
+        $this->data['title']       = 'Навигация';
+        $this->data['navigations'] = NavigationService::getAll($this->model);
         return view('admin.navigation._index', $this->data);
     }
 
     public function create(Request $request)
     {
-        $this->data['title'] = 'Добавить элемент';
+        $this->data['title'] = 'Добавить элемент навигации';
         if($request->isMethod('post')){
             $data = $request->except('_token');
             return NavigationService::create($data, $this->model);
@@ -35,7 +35,7 @@ class NavigationController extends Controller
     {
         $this->data['title']      = 'Добавить элемент';
         $this->data['navigation'] = NavigationService::getId($request->id, $this->model);
-        if($request->isMethod('post')){
+        if($request->isMethod('put')){
             $data = $request->except('_token');
             return NavigationService::update($request->id, $data, $this->model);
         }

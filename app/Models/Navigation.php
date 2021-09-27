@@ -10,6 +10,12 @@ class Navigation extends Model
 {
     use HasFactory, SoftDeletes;
 
+    protected $table = 'navigation';
+
+    protected $fillable = [
+        'head', 'route', 'class', 'svg', 'icon', 'target', 'location', 'dropdown', 'parent', 'range',
+    ];
+
     protected $dates = ['deleted_at'];
 
     private $navMenu=[
