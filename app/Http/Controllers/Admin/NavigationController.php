@@ -33,7 +33,7 @@ class NavigationController extends Controller
 
     public function update(Request $request)
     {
-        $this->data['title']      = 'Добавить элемент';
+        $this->data['title']      = 'Редактировать элемент навигации';
         $this->data['navigation'] = NavigationService::getId($request->id, $this->model);
         if($request->isMethod('put')){
             $data = $request->except('_token');

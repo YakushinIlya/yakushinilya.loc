@@ -32,9 +32,9 @@
                 <div class="mb-3">
                     <label for="setting-input-7" class="form-label">Location</label>
                     <select name="location" class="form-control" id="setting-input-7" required>
-                        <option value="top">Верхнее меню</option>
-                        <option value="right">Правое меню</option>
-                        <option value="bottom">Нижнее меню</option>
+                        @foreach(config('customAdmin.navigationLocale') as $k => $v)
+                            <option value="{{$k}}">{{$v}}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="mb-3">
