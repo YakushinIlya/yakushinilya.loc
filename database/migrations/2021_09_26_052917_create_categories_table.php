@@ -21,11 +21,11 @@ class CreateCategoriesTable extends Migration
             $table->string('category_article')->nullable();
             $table->integer('category_parent')->nullable();
             $table->integer('category_status')->nullable();
-            $table->integer('category_title')->nullable();
-            $table->integer('category_description')->nullable();
-            $table->integer('category_keywords')->nullable();
-            $table->dateTime('deleted_at')->nullable();
+            $table->string('category_title')->nullable();
+            $table->string('category_description')->nullable();
+            $table->string('category_keywords')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

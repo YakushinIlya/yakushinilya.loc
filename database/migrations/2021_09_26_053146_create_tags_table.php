@@ -20,11 +20,11 @@ class CreateTagsTable extends Migration
             $table->string('tags_url_prefix')->nullable();
             $table->string('tags_article')->nullable();
             $table->integer('tags_status')->nullable();
-            $table->integer('tags_title')->nullable();
-            $table->integer('tags_description')->nullable();
-            $table->integer('tags_keywords')->nullable();
-            $table->dateTime('deleted_at')->nullable();
+            $table->string('tags_title')->nullable();
+            $table->string('tags_description')->nullable();
+            $table->string('tags_keywords')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -20,11 +20,11 @@ class CreatePostsTable extends Migration
             $table->string('post_url_prefix')->nullable();
             $table->string('post_article')->nullable();
             $table->integer('post_status')->nullable();
-            $table->integer('post_title')->nullable();
-            $table->integer('post_description')->nullable();
-            $table->integer('post_keywords')->nullable();
-            $table->dateTime('deleted_at')->nullable();
+            $table->string('post_title')->nullable();
+            $table->string('post_description')->nullable();
+            $table->string('post_keywords')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -42,5 +42,10 @@ class ComposerServiceProvider extends ServiceProvider
                 'widgets' => $widget->widgetList(),
             ]);
         });
+        View::composer('admin._sidebar', function($view) use($navigation) {
+            $view->with([
+                'navigation' => $navigation->adminNav(),
+            ]);
+        });
     }
 }

@@ -28,4 +28,10 @@ Route::group([
     'namespace' => 'Admin'
 ], function(){
     Route::get('/', 'AdminController@getIndex')->name('admin');
+
+    //Навигация
+    Route::get('/navigation', 'NavigationController@index')->name('admin.navigation');
+    Route::get('/navigation/add', 'NavigationController@create')->name('admin.navigation.add');
+    Route::get('/navigation/edit/{id}', 'NavigationController@update')->name('admin.navigation.edit');
+    Route::get('/navigation/drop/{id}', 'NavigationController@delete')->name('admin.navigation.drop');
 });

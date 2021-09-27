@@ -19,12 +19,13 @@ class CreatePagesTable extends Migration
             $table->string('page_url_address')->nullable();
             $table->string('page_url_prefix')->nullable();
             $table->string('page_article')->nullable();
+            $table->string('page_title')->nullable();
+            $table->string('page_description')->nullable();
+            $table->string('page_keywords')->nullable();
+            $table->string('page_template')->nullable();
             $table->integer('page_status')->nullable();
-            $table->integer('page_title')->nullable();
-            $table->integer('page_description')->nullable();
-            $table->integer('page_keywords')->nullable();
-            $table->dateTime('deleted_at')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
