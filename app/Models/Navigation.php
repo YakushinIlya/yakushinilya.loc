@@ -18,19 +18,6 @@ class Navigation extends Model
 
     protected $dates = ['deleted_at'];
 
-    private $navMenu=[
-        [
-            'head'  => 'Главная',
-            'route' => '/',
-            'class' => '',
-        ],
-        [
-            'head'  => 'Автор в ВК',
-            'route' => 'https://vk.com/yakushinilya',
-            'class' => '',
-        ],
-    ];
-
     private $sidebarMenu=[
         [
             'head'  => 'Навигация',
@@ -101,9 +88,12 @@ class Navigation extends Model
         ],
     ];
 
-    public function listMenu()
+    public function navMenuTop()
     {
-        return $this->navMenu;
+        return $this->where('location', 'top')
+            ->orderBy('range')
+            ->get()
+            ->toArray();
     }
 
     public function sidebarMenu()

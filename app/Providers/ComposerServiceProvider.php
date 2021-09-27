@@ -29,7 +29,7 @@ class ComposerServiceProvider extends ServiceProvider
     {
         View::composer('basic._navigation-top', function($view) use($navigation) {
             $view->with([
-                'navMenu'     => $navigation->listMenu(),
+                'navMenuTop' => $navigation->navMenuTop(),
             ]);
         });
         View::composer('basic._navigation-sidebar', function($view) use($navigation) {

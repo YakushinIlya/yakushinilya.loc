@@ -1,4 +1,4 @@
-@forelse($navMenu as $item)
+@forelse($navMenuTop as $item)
     <li class="nav-item">
         <a class="nav-link" aria-current="page" href="{{$item['route']}}">{{$item['head']}}</a>
     </li>
