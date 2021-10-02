@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="/media/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/media/bootstrap/css/style.css" rel="stylesheet">
-    <title>Якушин Илья</title>
+    <title>{{$title??config('app.name')}}</title>
 </head>
 <body>
 
@@ -40,7 +40,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8">
-                @include('basic._content')
+                @yield('content')
             </div>
             <div class="col-md-4">
                 <aside>

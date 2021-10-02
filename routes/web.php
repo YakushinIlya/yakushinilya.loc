@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'HomeController@home')->name('home');
+
 Route::get('/vk', function () {
     return redirect('https://vk.com/yakushinilya');
 })->name('vk');
@@ -30,8 +31,16 @@ Route::group([
     Route::get('/', 'AdminController@getIndex')->name('admin');
 
     //Навигация
-    Route::get('/navigation', 'NavigationController@index')->name('admin.navigation');
+    Route::get('/navigations', 'NavigationController@index')->name('admin.navigation');
     Route::match(['get', 'post'],'/navigation/add', 'NavigationController@create')->name('admin.navigation.add');
     Route::match(['get', 'put'], '/navigation/edit/{id}', 'NavigationController@update')->name('admin.navigation.edit');
     Route::delete('/navigation/drop/{id}', 'NavigationController@delete')->name('admin.navigation.drop');
+
+    //Страницы
+    Route::get('/pages', 'PageController@index')->name('admin.page');
+    Route::match(['get', 'post'],'/page/add', 'PageController@create')->name('admin.page.add');
+    Route::match(['get', 'put'], '/page/edit/{id}', 'PageController@update')->name('admin.page.edit');
+    Route::delete('/page/drop/{id}', 'PageController@delete')->name('admin.page.drop');
 });
+
+Route::get('/{route}', 'PagesController@getRoute')->name('page');

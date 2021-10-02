@@ -8,6 +8,6 @@ class HomeController extends Controller
 {
     public function home()
     {
-        return view('basic.app', $this->data);
+        return view('basic.page.index', $this->data);
     }
 }
