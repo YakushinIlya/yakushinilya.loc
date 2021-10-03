@@ -12,6 +12,7 @@ class PagesController extends Controller
     {
         $this->model = $model;
     }
+
     public function getRoute(string $route)
     {
         if($pageData = PageService::getRoute($route, $this->model)){
@@ -21,7 +22,7 @@ class PagesController extends Controller
             $pageData['page_article']  = base64_decode($pageData['page_article']);
             $this->data['page']        = $pageData;
         } else {
-            $pageData['page_template'] = '404';
+            return view('basic.404');
         }
 
         return view('basic.page.'.$pageData['page_template']??'default', $this->data);

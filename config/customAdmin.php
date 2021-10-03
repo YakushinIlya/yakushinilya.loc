@@ -10,4 +10,7 @@
      'pageTemplate' => [
          'default' => 'Стандартный',
      ],
+     'postTemplate' => [
+         'default' => 'Стандартный',
+     ],
  ];

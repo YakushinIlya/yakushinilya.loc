@@ -41,6 +41,13 @@ Route::group([
     Route::match(['get', 'post'],'/page/add', 'PageController@create')->name('admin.page.add');
     Route::match(['get', 'put'], '/page/edit/{id}', 'PageController@update')->name('admin.page.edit');
     Route::delete('/page/drop/{id}', 'PageController@delete')->name('admin.page.drop');
+
+    //Статьи
+    Route::get('/posts', 'PostController@index')->name('admin.post');
+    Route::match(['get', 'post'],'/post/add', 'PostController@create')->name('admin.post.add');
+    Route::match(['get', 'put'], '/post/edit/{id}', 'PostController@update')->name('admin.post.edit');
+    Route::delete('/post/drop/{id}', 'PostController@delete')->name('admin.post.drop');
 });
 
 Route::get('/{route}', 'PagesController@getRoute')->name('page');
+Route::get('/blog/{route}', 'PostsController@getRoute')->name('post');

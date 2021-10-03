@@ -34,4 +34,18 @@ class Validation
             'page_template'    => 'nullable|string',
         ]);
     }
+
+    public static function postData(array $data)
+    {
+        return Validator::make($data, [
+            'post_head'        => 'required|string',
+            'post_url_address' => 'nullable|string',
+            'post_url_prefix'  => 'nullable|string',
+            'post_article'     => 'nullable|string',
+            'post_title'       => 'nullable|string',
+            'post_description' => 'nullable|string',
+            'post_keywords'    => 'required|string',
+            'post_template'    => 'nullable|string',
+        ]);
+    }
 }
