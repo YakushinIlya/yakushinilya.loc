@@ -7,15 +7,15 @@
                 @csrf
                 <div class="mb-3">
                     <label for="setting-input-1" class="form-label">Заголовок RU</label>
-                    <input type="text" name="head_ru" class="form-control" id="setting-input-1" required>
+                    <input type="text" name="head_ru" class="form-control" id="setting-input-1" value="{{old('head_ru')}}" required>
                 </div>
                 <div class="mb-3">
                     <label for="setting-input-2" class="form-label">Заголовок EN</label>
-                    <input type="text" name="head_en" class="form-control" id="setting-input-2">
+                    <input type="text" name="head_en" class="form-control" id="setting-input-2" value="{{old('head_en')}}">
                 </div>
                 <div class="mb-3">
                     <label for="setting-input-4" class="form-label">Содержимое виджета</label>
-                    <textarea name="body" rows="7" style="height: 150px;" class="form-control" id="setting-input-4">{{old('post_article')}}</textarea>
+                    <textarea name="body" rows="7" style="height: 150px;" class="form-control" id="setting-input-4">{{old('body')}}</textarea>
                 </div>
                 <div class="mb-3">
                     <label for="setting-input-7" class="form-label">Location</label>
