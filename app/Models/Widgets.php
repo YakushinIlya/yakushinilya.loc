@@ -4,10 +4,19 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Widget extends Model
+class Widgets extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
+
+    protected $table = 'widgets';
+
+    protected $fillable = [
+        'head_ru', 'head_en', 'body', 'location', 'range',
+    ];
+
+    protected $dates = ['deleted_at'];
 
     private $data=[
         [

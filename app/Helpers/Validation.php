@@ -48,4 +48,15 @@ class Validation
             'post_template'    => 'nullable|string',
         ]);
     }
+
+    public static function widgetData(array $data)
+    {
+        return Validator::make($data, [
+            'head_ru'  => 'required|string',
+            'head_en'  => 'nullable|string',
+            'body'     => 'nullable|string',
+            'location' => 'nullable|string',
+            'range'    => 'nullable|integer',
+        ]);
+    }
 }

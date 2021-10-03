@@ -36,6 +36,12 @@ Route::group([
     Route::match(['get', 'put'], '/navigation/edit/{id}', 'NavigationController@update')->name('admin.navigation.edit');
     Route::delete('/navigation/drop/{id}', 'NavigationController@delete')->name('admin.navigation.drop');
 
+    //Виджеты
+    Route::get('/widgets', 'WidgetController@index')->name('admin.widget');
+    Route::match(['get', 'post'],'/widget/add', 'WidgetController@create')->name('admin.widget.add');
+    Route::match(['get', 'put'], '/widget/edit/{id}', 'WidgetController@update')->name('admin.widget.edit');
+    Route::delete('/widget/drop/{id}', 'WidgetController@delete')->name('admin.widget.drop');
+
     //Страницы
     Route::get('/pages', 'PageController@index')->name('admin.page');
     Route::match(['get', 'post'],'/page/add', 'PageController@create')->name('admin.page.add');

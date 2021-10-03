@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use App\Models\{
-    Navigation, Widget
+    Navigation, Widgets
 };
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
@@ -25,7 +25,7 @@ class ComposerServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot(Navigation $navigation, Widget $widget)
+    public function boot(Navigation $navigation, Widgets $widget)
     {
         View::composer('basic._navigation-top', function($view) use($navigation) {
             $view->with([
