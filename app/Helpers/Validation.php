@@ -59,4 +59,18 @@ class Validation
             'range'    => 'nullable|integer',
         ]);
     }
+
+    public static function categoryData(array $data)
+    {
+        return Validator::make($data, [
+            'category_head'        => 'required|string',
+            'category_url_address' => 'nullable|string',
+            'category_url_prefix'  => 'nullable|string',
+            'category_article'     => 'nullable|string',
+            'category_title'       => 'nullable|string',
+            'category_description' => 'nullable|string',
+            'category_keywords'    => 'nullable|string',
+            'category_parent'      => 'nullable|integer',
+        ]);
+    }
 }

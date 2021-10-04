@@ -53,6 +53,12 @@ Route::group([
     Route::match(['get', 'post'],'/post/add', 'PostController@create')->name('admin.post.add');
     Route::match(['get', 'put'], '/post/edit/{id}', 'PostController@update')->name('admin.post.edit');
     Route::delete('/post/drop/{id}', 'PostController@delete')->name('admin.post.drop');
+
+    //Категории
+    Route::get('/categories', 'CategoryController@index')->name('admin.category');
+    Route::match(['get', 'post'],'/category/add', 'CategoryController@create')->name('admin.category.add');
+    Route::match(['get', 'put'], '/category/edit/{id}', 'CategoryController@update')->name('admin.category.edit');
+    Route::delete('/category/drop/{id}', 'CategoryController@delete')->name('admin.category.drop');
 });
 
 Route::get('/{route}', 'PagesController@getRoute')->name('page');

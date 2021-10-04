@@ -6,6 +6,7 @@
             <form class="settings-form" method="post" action="{{route('admin.page.edit', ['id'=>$page['id']])}}">
                 @method('PUT')
                 @csrf
+                <div class="mb-3">
                     <label for="setting-input-1" class="form-label">Заголовок</label>
                     <input type="text" name="page_head" class="form-control" id="setting-input-1" value="{{$page['page_head']}}" required>
                 </div>
