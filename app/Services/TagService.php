@@ -7,7 +7,7 @@ use App\Helpers\Validation;
 use App\Interfaces\NavigationInterface;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
-class CategoryService implements NavigationInterface
+class TagService implements NavigationInterface
 {
     public static function getAll(object $model)
     {
@@ -29,21 +29,21 @@ class CategoryService implements NavigationInterface
 
     public static function create(array $data, object $model)
     {
-        $validator = Validation::categoryData($data);
+        $validator = Validation::tagsData($data);
         if($validator->fails()){
             return redirect()->back()->withErrors($validator)->withInput();
         } else {
-            $data['category_article']     = base64_encode($data['category_article']);
-            $data['category_url_address'] = trim($data['category_url_address'], '/');
-            $data['category_url_prefix']  = trim($data['category_url_prefix'], '.');
+            $data['tags_article']     = base64_encode($data['tags_article']);
+            $data['tags_url_address'] = trim($data['tags_url_address'], '/');
+            $data['tags_url_prefix']  = trim($data['tags_url_prefix'], '.');
 
-            if(empty($data['category_url_address'])){
-                $data['category_url_address'] = Generation::urlAddress($data['category_head']);
+            if(empty($data['tags_url_address'])){
+                $data['tags_url_address'] = Generation::urlAddress($data['tags_head']);
             }
 
             try {
                 $model::create($data);
-                return redirect()->route('admin.category')->with('status', 'Категория успешно добавлена');
+                return redirect()->route('admin.tag')->with('status', 'Тег успешно добавлен');
             } catch(ModelNotFoundException $e){
                 return redirect()->back()->withErrors($e->getMessage())->withInput();
             }
@@ -52,21 +52,21 @@ class CategoryService implements NavigationInterface
 
     public static function update(int $id, array $data, object $model)
     {
-        $validator = Validation::categoryData($data);
+        $validator = Validation::tagsData($data);
         if($validator->fails()){
             return redirect()->back()->withErrors($validator)->withInput();
         } else {
-            $data['category_article']     = base64_encode($data['category_article']);
-            $data['category_url_address'] = trim($data['category_url_address'], '/');
-            $data['category_url_prefix']  = trim($data['category_url_prefix'], '.');
+            $data['tags_article']     = base64_encode($data['tags_article']);
+            $data['tags_url_address'] = trim($data['tags_url_address'], '/');
+            $data['tags_url_prefix']  = trim($data['tags_url_prefix'], '.');
 
-            if(empty($data['category_url_address'])){
-                $data['category_url_address'] = Generation::urlAddress($data['category_head']);
+            if(empty($data['tags_url_address'])){
+                $data['tags_url_address'] = Generation::urlAddress($data['tags_head']);
             }
 
             try {
                 $model::findOrFail($id)->update($data);
-                return redirect()->back()->with('status', 'Категория успешно обновлена');
+                return redirect()->back()->with('status', 'Тег успешно обновлен');
             } catch(ModelNotFoundException $e){
                 return redirect()->back()->withErrors($e->getMessage())->withInput();
             }
@@ -77,7 +77,7 @@ class CategoryService implements NavigationInterface
     {
         try {
             $model::findOrFail($id)->delete();
-            return redirect()->back()->with('status', 'Категория успешно удалена');
+            return redirect()->back()->with('status', 'Тег успешно удален');
         } catch(ModelNotFoundException $e){
             return redirect()->back()->withErrors($e->getMessage());
         }

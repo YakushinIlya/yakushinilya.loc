@@ -59,6 +59,12 @@ Route::group([
     Route::match(['get', 'post'],'/category/add', 'CategoryController@create')->name('admin.category.add');
     Route::match(['get', 'put'], '/category/edit/{id}', 'CategoryController@update')->name('admin.category.edit');
     Route::delete('/category/drop/{id}', 'CategoryController@delete')->name('admin.category.drop');
+
+    //Теги
+    Route::get('/tags', 'TagController@index')->name('admin.tag');
+    Route::match(['get', 'post'],'/tag/add', 'TagController@create')->name('admin.tag.add');
+    Route::match(['get', 'put'], '/tag/edit/{id}', 'TagController@update')->name('admin.tag.edit');
+    Route::delete('/tag/drop/{id}', 'TagController@delete')->name('admin.tag.drop');
 });
 
 Route::get('/{route}', 'PagesController@getRoute')->name('page');

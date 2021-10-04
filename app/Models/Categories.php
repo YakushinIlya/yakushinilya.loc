@@ -16,6 +16,6 @@ class Categories extends Model
 
     protected $fillable = [
         'category_head', 'category_url_address', 'category_url_prefix', 'category_article', 'category_title',
-        'category_description', 'category_keywords', 'category_template', 'category_status',
+        'category_description', 'category_keywords', 'category_status',
     ];
 }

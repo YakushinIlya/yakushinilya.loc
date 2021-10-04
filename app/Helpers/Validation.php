@@ -73,4 +73,17 @@ class Validation
             'category_parent'      => 'nullable|integer',
         ]);
     }
+
+    public static function tagsData(array $data)
+    {
+        return Validator::make($data, [
+            'tags_head'        => 'required|string',
+            'tags_url_address' => 'nullable|string',
+            'tags_url_prefix'  => 'nullable|string',
+            'tags_article'     => 'nullable|string',
+            'tags_title'       => 'nullable|string',
+            'tags_description' => 'nullable|string',
+            'tags_keywords'    => 'nullable|string',
+        ]);
+    }
 }

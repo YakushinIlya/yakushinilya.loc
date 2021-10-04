@@ -34,6 +34,14 @@
                     <input type="text" name="post_keywords" class="form-control" value="{{$post['post_keywords']}}" id="setting-input-6">
                 </div>
                 <div class="mb-3">
+                    <label for="setting-input-7" class="form-label">Категории статьи</label>
+                    <select name="post_template" class="form-control" id="setting-input-7" style="height: 100px;" multiple required>
+                        @foreach($categories as $category)
+                            <option value="{{$category['id']}}">{{$category['category_head']}}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="mb-3">
                     <label for="setting-input-7" class="form-label">Шаблон статьи</label>
                     <select name="post_template" class="form-control" id="setting-input-7" required>
                         @foreach(config('customAdmin.postTemplate') as $k => $v)
