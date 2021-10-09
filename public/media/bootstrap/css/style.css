@@ -114,3 +114,10 @@ footer .copyright {
         height: 50px !important;
     }
 }
+
+
+.btn-orange {
+    color:#000;
+    background-color:#fd7e14;
+    border-color:#5cb377;
+}

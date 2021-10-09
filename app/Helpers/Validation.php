@@ -86,4 +86,22 @@ class Validation
             'tags_keywords'    => 'nullable|string',
         ]);
     }
+
+    public static function userAuthData($data)
+    {
+        return Validator::make($data, [
+            'email'    => 'email|required|string',
+            'password' => 'required|string'
+        ]);
+    }
+
+    public static function userRegisterData($data)
+    {
+        return Validator::make($data, [
+            'first_name' => 'required|string',
+            'last_name'  => 'required|string',
+            'email'      => 'required|string|email|max:255|unique:users',
+            'password'   => 'required|string|min:5',
+        ]);
+    }
 }

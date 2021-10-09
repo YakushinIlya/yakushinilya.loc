@@ -15,18 +15,33 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'HomeController@home')->name('home');
 
-Route::get('/vk', function () {
+//Авторизация
+Route::group([
+    'prefix' => 'user',
+    'namespace' => 'Auth',
+], function(){
+    Route::post('/register', 'RegisterController@register')->name('register');
+    Route::get('/registration', 'RegisterController@registration')->name('registration');
+
+    Route::get('/auth', 'AuthController@auth')->name('auth');
+    Route::post('/login', 'AuthController@login')->name('login');
+
+    Route::get('/logout', 'AuthController@logout')->name('logout');
+});
+
+/*Route::get('/vk', function () {
     return redirect('https://vk.com/yakushinilya');
 })->name('vk');
 Route::get('/blog', 'Blog/PostController@getAll')->name('blog');
 Route::get('/business', 'Pages/BusinessController@getAll')->name('business');
 Route::get('/tariffs', 'Pages/PageController@getAll')->name('tariffs');
-Route::get('/contacts', 'Pages/PageController@getAll')->name('contacts');
+Route::get('/contacts', 'Pages/PageController@getAll')->name('contacts');*/
 
 
 Route::group([
-    'prefix' => 'admin',
-    'namespace' => 'Admin'
+    'prefix'     => 'admin',
+    'namespace'  => 'Admin',
+    'middleware' => ['auth', 'admin'],
 ], function(){
     Route::get('/', 'AdminController@getIndex')->name('admin');
 
