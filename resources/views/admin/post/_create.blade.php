@@ -3,8 +3,15 @@
 @section('content')
     <div class="app-card app-card-orders-table shadow-sm mb-5 p-4">
         <div class="app-card-body">
-            <form class="settings-form" method="post" action="{{route('admin.post.add')}}">
+            <form class="settings-form" method="post" action="{{route('admin.post.add')}}" enctype="multipart/form-data">
                 @csrf
+                <div class="form-file mb-3">
+                    <input type="file" name="photo" class="form-file-input" id="customFile">
+                    <label class="form-file-label" for="customFile">
+                        <span class="form-file-text">Выберите изображение статьи</span>
+                        <span class="form-file-button">Выбрать</span>
+                    </label>
+                </div>
                 <div class="mb-3">
                     <label for="setting-input-1" class="form-label">Заголовок</label>
                     <input type="text" name="post_head" class="form-control" id="setting-input-1" value="{{old('post_head')}}" required>

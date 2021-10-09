@@ -20,6 +20,7 @@ class CreatePostsTable extends Migration
             $table->string('post_url_prefix')->nullable();
             $table->string('post_article')->nullable();
             $table->integer('post_status')->nullable();
+            $table->string('post_photo')->nullable();
             $table->string('post_title')->nullable();
             $table->string('post_description')->nullable();
             $table->string('post_keywords')->nullable();

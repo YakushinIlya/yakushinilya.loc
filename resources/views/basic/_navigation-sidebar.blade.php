@@ -15,6 +15,6 @@
             </div>
         </section>
     @empty
-        No sidebar
+
     @endforelse
 @endisset

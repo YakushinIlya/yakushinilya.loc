@@ -16,6 +16,6 @@ class Posts extends Model
 
     protected $fillable = [
         'post_head', 'post_url_address', 'post_url_prefix', 'post_article', 'post_title', 'post_description',
-        'post_keywords', 'post_template', 'post_status',
+        'post_keywords', 'post_template', 'post_status', 'post_photo',
     ];
 }

@@ -30,7 +30,7 @@ class Validation
             'page_article'     => 'nullable|string',
             'page_title'       => 'nullable|string',
             'page_description' => 'nullable|string',
-            'page_keywords'    => 'required|string',
+            'page_keywords'    => 'nullable|string',
             'page_template'    => 'nullable|string',
         ]);
     }
@@ -44,7 +44,7 @@ class Validation
             'post_article'     => 'nullable|string',
             'post_title'       => 'nullable|string',
             'post_description' => 'nullable|string',
-            'post_keywords'    => 'required|string',
+            'post_keywords'    => 'nullable|string',
             'post_template'    => 'nullable|string',
         ]);
     }

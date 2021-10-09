@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Helpers\Generation;
+use App\Helpers\ImageCorrector;
 use App\Helpers\Validation;
 use App\Interfaces\NavigationInterface;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
