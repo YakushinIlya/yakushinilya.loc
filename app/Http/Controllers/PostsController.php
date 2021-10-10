@@ -13,6 +13,14 @@ class PostsController extends Controller
         $this->model = $model;
     }
 
+    public function getAll()
+    {
+        $this->data['title'] = 'Все записи блога';
+        $this->data['posts'] = PostService::getAll(20, $this->model);
+
+        return view('basic.post.list', $this->data);
+    }
+
     public function getRoute(string $route)
     {
         if($postData = PostService::getRoute($route, $this->model)){

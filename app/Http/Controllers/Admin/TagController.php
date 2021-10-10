@@ -17,7 +17,7 @@ class TagController extends Controller
     public function index()
     {
         $this->data['title'] = 'Категории';
-        $this->data['tags']  = TagService::getAll($this->model);
+        $this->data['tags']  = TagService::getAll(20, $this->model);
         return view('admin.tag._index', $this->data);
     }
 

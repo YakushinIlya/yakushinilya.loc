@@ -17,7 +17,7 @@ class CategoryController extends Controller
     public function index()
     {
         $this->data['title']       = 'Категории';
-        $this->data['categories']  = CategoryService::getAll($this->model);
+        $this->data['categories']  = CategoryService::getAll(20, $this->model);
         return view('admin.category._index', $this->data);
     }
 

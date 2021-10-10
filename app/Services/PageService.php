@@ -9,10 +9,10 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class PageService implements NavigationInterface
 {
-    public static function getAll(object $model)
+    public static function getAll(int $count, object $model)
     {
         try {
-            return $model::orderByDesc('id')->paginate(20);
+            return $model::orderByDesc('id')->paginate($count);
         } catch(ModelNotFoundException $e){
             return redirect()->back()->withErrors($e->getMessage());
         }

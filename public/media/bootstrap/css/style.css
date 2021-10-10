@@ -61,6 +61,11 @@ main section article .image-post {
     width: 100%;
     height: 200px;
 }
+main section article .first-image-post {
+    max-width: 100%;
+    min-height: 200px;
+    max-height: 300px;
+}
 
 main aside section {
     margin-bottom: 20px;
@@ -143,8 +148,25 @@ footer .copyright {
     flex-direction: column;
     min-width: 0;
     word-wrap: break-word;
-    background-color: none;
+    background-color: #212529!important;
     background-clip: border-box;
     border: 1px solid rgba(0,0,0,.125);
     border-radius: .25rem;
 }
+
+
+/*Pagination*/
+.page-link, .page-item.disabled .page-link  {
+    background-color: #212529!important;
+    border: 1px solid #212529;
+    color: #ffffff;
+}
+.page-link:hover {
+    color: #ffffff;
+}
+.page-item.active .page-link {
+    color: #ffffff;
+    border: 1px solid #fd7e14;
+    background-color: #fd7e14 !important;
+}
+

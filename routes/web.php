@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'HomeController@home')->name('home');
-Route::get('/blog', 'Blog\PostController@getAll')->name('blog');
+Route::get('/blog', 'PostsController@getAll')->name('blog');
 
 //Авторизация
 Route::group([

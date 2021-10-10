@@ -25,7 +25,8 @@ class ImageCorrector
             });
         }
 
-        $image->resizeCanvas($w, $h);
+        $image->resizeCanvas($w, $h, 'center', false, '3c3f41');
+        //$image->colorize(-100, -100, -100);
 
         $image->save();
     }

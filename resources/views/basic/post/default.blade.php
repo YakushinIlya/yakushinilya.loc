@@ -7,7 +7,7 @@
         </header>
         <article>
             @if(!empty($post['post_photo']))
-                <img src="{{$post['post_photo']}}" alt="{{$post['post_head']}}">
+                <img src="{{$post['post_photo']}}" alt="{{$post['post_head']}}" class="img-fluid first-image-post">
             @endif
             {!! $post['post_article'] !!}
         </article>

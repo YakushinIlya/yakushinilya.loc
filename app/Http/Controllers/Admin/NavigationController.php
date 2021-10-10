@@ -17,7 +17,7 @@ class NavigationController extends Controller
     public function index()
     {
         $this->data['title']       = 'Навигация';
-        $this->data['navigations'] = NavigationService::getAll($this->model);
+        $this->data['navigations'] = NavigationService::getAll(20, $this->model);
         return view('admin.navigation._index', $this->data);
     }
 

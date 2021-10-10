@@ -17,7 +17,7 @@ class PageController extends Controller
     public function index()
     {
         $this->data['title'] = 'Страницы';
-        $this->data['pages'] = PageService::getAll($this->model);
+        $this->data['pages'] = PageService::getAll(20, $this->model);
         return view('admin.page._index', $this->data);
     }
 

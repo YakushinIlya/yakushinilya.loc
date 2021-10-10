@@ -17,7 +17,7 @@ class WidgetController extends Controller
     public function index()
     {
         $this->data['title']   = 'Виджеты';
-        $this->data['widgets'] = WidgetService::getAll($this->model);
+        $this->data['widgets'] = WidgetService::getAll(20, $this->model);
         return view('admin.widget._index', $this->data);
     }
 

@@ -23,14 +23,14 @@ class PostController extends Controller
     public function index()
     {
         $this->data['title'] = 'Статьи';
-        $this->data['posts'] = PostService::getAll($this->model);
+        $this->data['posts'] = PostService::getAll(20, $this->model);
         return view('admin.post._index', $this->data);
     }
 
     public function create(Request $request)
     {
         $this->data['title']      = 'Добавить статью';
-        $this->data['categories'] = CategoryService::getAll($this->modelCategory);
+        $this->data['categories'] = $this->modelCategory->all();
         if($request->isMethod('post')){
             $data = $request->except('_token');
             if($request->hasFile('photo')) {
@@ -48,9 +48,9 @@ class PostController extends Controller
 
     public function update(Request $request)
     {
-        $this->data['title'] = 'Редактировать статью';
-        $this->data['post']  = PostService::getId($request->id, $this->model);
-        $this->data['categories'] = CategoryService::getAll($this->modelCategory);
+        $this->data['title']      = 'Редактировать статью';
+        $this->data['post']       = PostService::getId($request->id, $this->model);
+        $this->data['categories'] = $this->modelCategory->all();
         if($request->isMethod('put')){
             $data = $request->except('_token');
             if($request->hasFile('photo')) {

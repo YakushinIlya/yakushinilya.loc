@@ -1,13 +1,13 @@
 @extends('basic.app')
 
 @section('content')
-    @isset($content['posts'])
+    @isset($posts)
         <section>
             <header>
-                <h1>Новые записи блога</h1>
+                <h1>Все записи блога</h1>
             </header>
             <article class="row justify-content-center">
-                @forelse($content['posts'] as $post)
+                @forelse($posts as $post)
                     <div class="col-12 col-md-6 mb-3">
                         <div class="card bg-dark bg-gradient h-100">
                             <div class="image-post">
@@ -17,17 +17,18 @@
                             </div>
                             <div class="card-body">
                                 <a href="{{route('post', ['route'=>$post['post_url_address'] . ($post["post_url_prefix"]?'.'.$post["post_url_prefix"]:'')])}}">
-                                    <h2 class="h6 card-title">{{Str::limit($post['post_head'], 100, '...')}}</h2>
+                                    <h2 class="h6 card-title">{{Str::limit($post['post_head'], 40, '...')}}</h2>
                                 </a>
                             </div>
                         </div>
                     </div>
                 @empty
-                    Не найдено новых записей
+                    Не найдено записей
                 @endforelse
-                    <div class="col-12 mt-3">
-                        <a href="{{route('blog')}}" class="btn btn-block btn-orange">Смотреть все записи блога</a>
-                    </div>
+
+                <div class="col-12 mt-3">
+                    {!! $posts->links() !!}
+                </div>
             </article>
         </section>
     @endisset
