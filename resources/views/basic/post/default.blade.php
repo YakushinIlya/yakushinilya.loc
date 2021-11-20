@@ -1,15 +1,15 @@
-@extends('basic.app')
+﻿@extends('basic.app')
 
 @section('content')
     <section>
         <header>
-            <h1>{{$post['post_head']}}</h1>
+            <h1 class="h4">{{$post['post_head']}}</h1>
         </header>
         <article>
             @if(!empty($post['post_photo']))
                 <img src="{{$post['post_photo']}}" alt="{{$post['post_head']}}" class="img-fluid first-image-post">
             @endif
-            {!! $post['post_article'] !!}
+           {!! base64_decode($post['post_article']) !!}
         </article>
     </section>
 @endsection

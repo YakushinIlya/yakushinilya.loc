@@ -19,6 +19,9 @@ header .header-bg {
     background: url("../../img/bg-menu.png") no-repeat right;
     background-size: 100% auto;
 }
+header .header-bg__logo {
+    z-index: 10;
+}
 header .dropdown-menu {
     border-radius: unset;
 }
@@ -90,6 +93,9 @@ main aside .body-module {
 }
 .navbar-light .navbar-nav .nav-link {
     font-weight: bold;
+}
+.body-module {
+    color: #ffffff;
 }
 
 

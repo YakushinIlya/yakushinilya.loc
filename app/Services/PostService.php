@@ -6,6 +6,7 @@ use App\Helpers\Generation;
 use App\Helpers\ImageCorrector;
 use App\Helpers\Validation;
 use App\Interfaces\NavigationInterface;
+use App\Models\Categories;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class PostService implements NavigationInterface
@@ -57,7 +58,8 @@ class PostService implements NavigationInterface
             }
 
             try {
-                $model::create($data);
+                $post = $model::create($data);
+                $post->category()->attach($data['category']);
                 return redirect()->route('admin.post')->with('status', 'Статья успешно добавлена');
             } catch(ModelNotFoundException $e){
                 return redirect()->back()->withErrors($e->getMessage())->withInput();
@@ -80,7 +82,10 @@ class PostService implements NavigationInterface
                     $data['post_url_address'] = Generation::urlAddress($data['post_head']);
                 }
 
-                $model::findOrFail($id)->update($data);
+                $post = $model::find($id);
+                $post->update($data);
+                $post->category()->detach();
+                $post->category()->attach($data['category']);
                 return redirect()->back()->with('status', 'Статья успешно обновлена');
             } catch(ModelNotFoundException $e){
                 return redirect()->back()->withErrors($e->getMessage())->withInput();

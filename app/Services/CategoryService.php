@@ -18,6 +18,15 @@ class CategoryService implements NavigationInterface
         }
     }
 
+    public static function getAllList(int $count, object $model)
+    {
+        try {
+            return $model::orderByDesc('id')->paginate($count);
+        } catch(ModelNotFoundException $e){
+            return redirect()->back()->withErrors($e->getMessage());
+        }
+    }
+
     public static function getId(int $id, object $model)
     {
         try {

@@ -26,7 +26,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="setting-input-4" class="form-label">Содержимое статьи</label>
-                    <textarea name="post_article" rows="7" style="height: 150px;" class="form-control" id="setting-input-4">{{old('post_article')}}</textarea>
+                    <textarea name="post_article" rows="7" class="form-control" id="setting-input-4">{{old('post_article')}}</textarea>
                 </div>
                 <div class="mb-3">
                     <label for="setting-input-5" class="form-label">TITLE</label>
@@ -42,7 +42,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="setting-input-7" class="form-label">Категории статьи</label>
-                    <select name="post_template" class="form-control" id="setting-input-7" style="height: 100px;" multiple required>
+                    <select name="category[]" class="form-control" id="setting-input-7" style="height: 100px;" multiple required>
                         @foreach($categories as $category)
                             <option value="{{$category['id']}}">{{$category['category_head']}}</option>
                         @endforeach

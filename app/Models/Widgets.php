@@ -27,6 +27,6 @@ class Widgets extends Model
 
     public function widgetList()
     {
-        return $this->data;
+        return $this->where('location', 'right')->get();
     }
 }

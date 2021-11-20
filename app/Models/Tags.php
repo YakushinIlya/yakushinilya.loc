@@ -18,4 +18,9 @@ class Tags extends Model
         'tags_head', 'tags_url_address', 'tags_url_prefix', 'tags_article', 'tags_title',
         'tags_description', 'tags_keywords', 'tags_status',
     ];
+
+    public function post()
+    {
+        return $this->belongsToMany('App\Models\Posts', 'post_tags', 'tags_id', 'post_id');
+    }
 }

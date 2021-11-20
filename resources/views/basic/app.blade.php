@@ -1,10 +1,11 @@
 <!doctype html>
-<html lang="ru">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="/media/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/media/bootstrap/css/style.css" rel="stylesheet">
+    <script src="https://cdn.tiny.cloud/1/35fwwbnhirflx3s8m4jg0atfen3af8rg5u6oa6u126lalwut/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
     <title>{{$title??config('app.name')}}</title>
 </head>
 <body>

@@ -4,7 +4,7 @@
     @isset($posts)
         <section>
             <header>
-                <h1>Все записи блога</h1>
+                <h1 class="h4">Все записи блога</h1>
             </header>
             <article class="row justify-content-center">
                 @forelse($posts as $post)

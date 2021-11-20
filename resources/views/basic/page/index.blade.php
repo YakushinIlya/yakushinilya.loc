@@ -4,7 +4,7 @@
     @isset($content['posts'])
         <section>
             <header>
-                <h1>Новые записи блога</h1>
+                <h1 class="h4">Новые записи блога</h1>
             </header>
             <article class="row justify-content-center">
                 @forelse($content['posts'] as $post)
@@ -28,6 +28,12 @@
                     <div class="col-12 mt-3">
                         <a href="{{route('blog')}}" class="btn btn-block btn-orange">Смотреть все записи блога</a>
                     </div>
+            </article>
+        </section>
+
+        <section class="mt-3">
+            <article class="row">
+                Тестовый текст
             </article>
         </section>
     @endisset

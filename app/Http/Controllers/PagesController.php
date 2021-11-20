@@ -19,7 +19,7 @@ class PagesController extends Controller
             $this->data['title']       = $pageData['page_title']??$pageData['page_head'];
             $this->data['description'] = $pageData['page_description'];
             $this->data['keywords']    = $pageData['page_keywords'];
-            $pageData['page_article']  = base64_decode($pageData['page_article']);
+            $pageData['page_article']  = $pageData['page_article'];
             $this->data['page']        = $pageData;
         } else {
             return view('basic.404');
