@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'HomeController@home')->name('home');
 Route::get('/blog', 'PostsController@getAll')->name('blog');
+Route::get('/category/{id}', 'CategoriesController@getId')->name('category');
 
 //Авторизация
 Route::group([

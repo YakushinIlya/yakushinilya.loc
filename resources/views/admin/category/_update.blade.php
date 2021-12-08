@@ -37,9 +37,9 @@
                 <div class="mb-3">
                     <label for="setting-input-7" class="form-label">Родитель</label>
                     <select name="location" class="form-control" id="setting-input-7">
-                        <option value="" selected disabled>-- Выберите родительскую категорию --</option>
+                        <option value="" selected>-- Выберите родительскую категорию --</option>
                         @foreach($categories as $cat)
-                            <option value="{{$cat['id']}}" @if($category['id']==$cat['id']) selected @endif>{{$category['category_head']}}</option>
+                            <option value="{{$cat['id']}}" @if($category['category_parent']==$cat['id']) selected @endif>{{$cat['category_head']}}</option>
                         @endforeach
                     </select>
                 </div>

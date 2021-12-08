@@ -48,9 +48,10 @@ class PostController extends Controller
 
     public function update(Request $request)
     {
-        $this->data['title']      = 'Редактировать статью';
-        $this->data['post']       = PostService::getId($request->id, $this->model);
-        $this->data['categories'] = $this->modelCategory->all();
+        $this->data['title']        = 'Редактировать статью';
+        $this->data['post']         = PostService::getId($request->id, $this->model);
+        $this->data['categories']   = $this->modelCategory->all();
+        $this->data['postCategory'] = $this->data['post']->category()->get()->toArray();
         if($request->isMethod('put')){
             $data = $request->except('_token');
             if($request->hasFile('photo')) {

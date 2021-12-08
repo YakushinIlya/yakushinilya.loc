@@ -37,7 +37,7 @@ class PostService implements NavigationInterface
     public static function getId(int $id, object $model)
     {
         try {
-            return $model::findOrFail($id);
+            return $model::find($id);
         } catch(ModelNotFoundException $e){
             return redirect()->back()->withErrors($e->getMessage());
         }

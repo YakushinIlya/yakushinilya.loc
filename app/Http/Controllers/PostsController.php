@@ -27,7 +27,6 @@ class PostsController extends Controller
             $this->data['title']       = $postData['post_title']??$postData['post_head'];
             $this->data['description'] = $postData['post_description'];
             $this->data['keywords']    = $postData['post_keywords'];
-            $postData['post_article']  = $postData['post_article'];
             $this->data['post']        = $postData;
         } else {
             return view('basic.404');

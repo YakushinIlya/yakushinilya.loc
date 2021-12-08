@@ -44,7 +44,12 @@
                     <label for="setting-input-7" class="form-label">Категории статьи</label>
                     <select name="category[]" class="form-control" id="setting-input-7" style="height: 100px;" multiple required>
                         @foreach($categories as $category)
-                            <option value="{{$category['id']}}">{{$category['category_head']}}</option>
+                            @foreach($postCategory as $cp)
+                                @if($cp['id']==$category['id'])
+                                    @php($selected=' selected')
+                                @endif
+                            @endforeach
+                            <option value="{{$category['id']}}" {{$selected??''}}>{{$category['category_head']}}</option>
                         @endforeach
                     </select>
                 </div>

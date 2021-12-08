@@ -11,6 +11,9 @@
          'bottom' => 'Нижнее меню',
          'right'  => 'Правое меню',
      ],
+     'widgetTemplate' => [
+         '_categories' => 'Категории',
+     ],
      'pageTemplate' => [
          'default' => 'Стандартный',
      ],

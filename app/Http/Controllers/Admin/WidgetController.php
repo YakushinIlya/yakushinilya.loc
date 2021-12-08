@@ -33,8 +33,8 @@ class WidgetController extends Controller
 
     public function update(Request $request)
     {
-        $this->data['title']   = 'Редактировать виджет';
-        $this->data['widget']  = WidgetService::getId($request->id, $this->model);
+        $this->data['title']  = 'Редактировать виджет';
+        $this->data['widget'] = WidgetService::getId($request->id, $this->model);
         if($request->isMethod('put')){
             $data = $request->except('_token');
             return WidgetService::update($request->id, $data, $this->model);

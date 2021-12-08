@@ -6,6 +6,9 @@
         </header>
         <div class="body-module">
             {!! base64_decode($item['body']) !!}
+            @if(!empty($item['template']))
+                @include('basic.widget.'.$item['template'])
+            @endif
         </div>
     </section>
 @empty

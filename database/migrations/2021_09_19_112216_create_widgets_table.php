@@ -19,6 +19,7 @@ class CreateWidgetsTable extends Migration
             $table->string('head_en')->nullable();
             $table->text('body')->nullable();
             $table->string('location')->nullable();
+            $table->string('template')->nullable();
             $table->integer('range')->nullable();
             $table->timestamps();
             $table->softDeletes();

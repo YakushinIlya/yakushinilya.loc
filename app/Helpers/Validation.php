@@ -56,6 +56,7 @@ class Validation
             'head_en'  => 'nullable|string',
             'body'     => 'nullable|string',
             'location' => 'nullable|string',
+            'template' => 'nullable|string',
             'range'    => 'nullable|integer',
         ]);
     }

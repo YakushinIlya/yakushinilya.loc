@@ -13,6 +13,7 @@
                             <th class="cell">Range</th>
                             <th class="cell">Заголовок</th>
                             <th class="cell">Location</th>
+                            <th class="cell">Template</th>
                             <th class="cell">Act.</th>
                         </tr>
                         </thead>
@@ -23,6 +24,7 @@
                                 <td class="cell">{{$widget["range"]}}</td>
                                 <td class="cell">{{$widget["head_ru"]??$widget["head_en"]}}</td>
                                 <td class="cell">{{$widget["location"]}}</td>
+                                <td class="cell">{{config('customAdmin.widgetTemplate')[$widget["template"]]??'null'}}</td>
                                 <td class="cell text-center">
                                     <a href="{{route('admin.widget.edit', ['id'=>$widget["id"]])}}" class="btn-sm btn-warning btn-block mb-2">Редактировать</a>
                                     <form action="{{route('admin.widget.drop', ['id'=>$widget["id"]])}}" method="POST">

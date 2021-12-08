@@ -26,6 +26,15 @@
                     </select>
                 </div>
                 <div class="mb-3">
+                    <label for="setting-input-8" class="form-label">Template</label>
+                    <select name="template" class="form-control" id="setting-input-8" required>
+                        <option selected disabled>--  Выберите шаблон виджета  --</option>
+                        @foreach(config('customAdmin.widgetTemplate') as $k => $v)
+                            <option value="{{$k}}">{{$v}}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="mb-3">
                     <label for="setting-input-8" class="form-label">Ранжирование</label>
                     <input type="text" name="range" class="form-control" id="setting-input-8" value="1">
                 </div>

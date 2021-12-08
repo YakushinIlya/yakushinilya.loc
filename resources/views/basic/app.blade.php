@@ -6,7 +6,12 @@
     <link href="/media/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/media/bootstrap/css/style.css" rel="stylesheet">
     <script src="https://cdn.tiny.cloud/1/35fwwbnhirflx3s8m4jg0atfen3af8rg5u6oa6u126lalwut/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <link rel="icon" href="/icon/favicon.ico" type=" image/x-icon">
+    <link rel="icon" href="/icon/favicon.svg" type=" image/svg+xml">
+    <link rel="icon" href="/icon/favicon.png" type=" image/png">
     <title>{{$title??config('app.name')}}</title>
+    <meta name="description" content="{{$description??''}}">
+    <meta name="keywords" content="{{$keywords??''}}">
 </head>
 <body>
 
@@ -65,5 +70,22 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="/media/bootstrap/js/bootstrap.min.js"></script>
 <script src="/media/bootstrap/js/script.js"></script>
+
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+    ym(50065045, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+    });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/50065045" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
 </body>
 </html>

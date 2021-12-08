@@ -13,7 +13,7 @@ class Widgets extends Model
     protected $table = 'widgets';
 
     protected $fillable = [
-        'head_ru', 'head_en', 'body', 'location', 'range',
+        'head_ru', 'head_en', 'body', 'location', 'template', 'range',
     ];
 
     protected $dates = ['deleted_at'];
